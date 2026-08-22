@@ -1,0 +1,47 @@
+# Slack app manifest — Freshdesk ticket creation.
+display_information:
+  name: Support Tickets
+  description: Create a Freshdesk support ticket without leaving Slack
+  background_color: "#1a1a2e"
+  long_description: >-
+    Opens a short form in Slack and files it straight into Freshdesk. The
+    channel gets a summary and the ticket number arrives as a reply in its
+    thread. Screenshots and log files can be attached to the form, and they
+    are attached to the ticket as it is created.
+
+features:
+  bot_user:
+    display_name: Support Tickets
+    always_online: true
+
+  slash_commands:
+    - command: /newticket
+      url: ""
+      description: Create a Freshdesk support ticket
+      usage_hint: Create FD Tickets
+      should_escape: false
+
+  shortcuts:
+    - name: Create a support ticket
+      type: global
+      callback_id: open_ticket_modal_global
+      description: Open the ticket form from anywhere in Slack
+    - name: Create ticket on FD
+      type: message
+      callback_id: open_ticket_modal_message
+      description: Pre-fill a ticket with this message's text
+
+oauth_config:
+  scopes:
+    bot:
+      # /newticket
+      - commands
+      - chat:write
+      - files:read
+settings:
+  interactivity:
+    is_enabled: true
+    request_url: ""
+  org_deploy_enabled: false
+  socket_mode_enabled: false
+  token_rotation_enabled: false

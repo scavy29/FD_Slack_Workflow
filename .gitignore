@@ -1,0 +1,17 @@
+node_modules/
+.clasprc.json
+.clasp.json
+.deployment-id
+.DS_Store
+*.log
+_to_delete/
+
+# Filled-in copies of the manifest contain the live web app URL and shared
+# secret, which together are the credential this whole integration rests on.
+*.local.yaml
+
+# Anything holding live credentials. .env was tracked for 9 commits and held
+# the Slack bot token, the Freshdesk API key and the shared secret.
+.env
+.env.*
+*.local.*

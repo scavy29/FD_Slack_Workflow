@@ -1,0 +1,9 @@
+curl -v -u zu0i8pT3DJmgwBFh8UVn:X \
+  -F "attachments[]=@/Users/vicky/Downloads/5-mb-example-file.pdf" \
+  -F "attachments[]=@/Users/vicky/Downloads/5mb.png" \
+  -F "attachments[]=@/Users/vicky/Downloads/8mb.txt" \
+  -F "email=dv@gmail.com" \
+  -F "subject=Ticket Title with attachments [API]" \
+  -F "description=this is a sample ticket" \
+  -F "group_id=1048000519835" \
+  -X POST 'https://browserstackhelpsandbox.freshdesk.com/api/v2/tickets'

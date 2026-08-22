@@ -1,0 +1,20 @@
+{
+  "name": "slack-freshdesk-ticket",
+  "version": "0.1.0",
+  "description": "Create a Freshdesk ticket from a Slack modal — Google Apps Script",
+  "private": true,
+  "scripts": {
+    "test": "node test/run.js",
+    "login": "clasp login",
+    "push": "npm test && clasp push -f",
+    "open": "clasp open-script",
+    "logs": "clasp tail-logs",
+    "deployments": "clasp list-deployments",
+    "deploy": "bash scripts/deploy.sh",
+    "deploy:first": "bash scripts/first-deploy.sh"
+  },
+  "devDependencies": {
+    "@google/clasp": "^3.3.0"
+  },
+  "engines": { "node": ">=18" }
+}

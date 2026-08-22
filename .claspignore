@@ -1,0 +1,8 @@
+# NOTE: clasp matches these patterns relative to rootDir (src/), NOT the
+# project root. `rootDir` already scopes the push to src/, so docs, tests and
+# scripts are excluded by virtue of living outside it — nothing to do here.
+#
+# A rule like `!src/**` looks right and silently matches nothing, because the
+# paths clasp compares are `Config.js`, not `src/Config.js`. The symptom is
+# `clasp push` reporting "Script is already up to date" against an empty editor.
+**/*.test.js
